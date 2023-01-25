@@ -1,4 +1,4 @@
-import { Controller, Get, Param ,Delete} from '@nestjs/common';
+import { Controller, Get, Param ,Delete,Patch} from '@nestjs/common';
 import { Body, Post } from '@nestjs/common/decorators';
 import { AppService } from './app.service';
 import axios from 'axios';
@@ -38,6 +38,12 @@ export class AppController {
   @Get('/watchlist/:id')
   async getByid(@Param('id') id:string):Promise<string>{
       return this.appService.getbyid(id);
+  }
+  
+  @Patch(':id')
+  async updateProduct(@Param('id') id:string,@Body('name') name:string,@Body('tokens') tokens:[string]):Promise<any>{
+    // this.appService.updateWatchlist(id,name,tokens);
+     
   }
 
   @Delete('/watchlist/:id')

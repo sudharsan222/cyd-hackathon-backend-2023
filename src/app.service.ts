@@ -39,7 +39,24 @@ async getWatchlist() {
       console.log(JSON.parse(data).find((item:any) => item._id === id));
       return JSON.parse(data).find((item:any) => item._id === id);
   }
+  
+  // async watchlist(id:string,name:string,tokens:[string])
+  //   {
+  //     const data = await fs.promises.readFile('.//databases//WatchLists.json', 'utf8');
+  //     console.log(data)
+  //       const updatedProduct = {...product};
+  //       if(name)
+  //       {
+  //           updatedProduct.nsme = name;
+  //       }
+  //       if(tokens)
+  //       {
+  //           updatedProduct.description = description;
+  //       }
+        
 
+  //       this.products[index] = updatedProduct;
+  //   }
   async deletebyid(id:string)
   {
     
